@@ -6,12 +6,13 @@
     "content_scripts":[
         {
             "matches": ["<all_urls>"],
-            "js": ["javascript/content.js"]
+            "js": ["javascript/content.js"],
+            "css": ["style.css"]
         }
     ],
     "browser_action": {
         "default_title": "ScienCheck",
-        "default_icon": "../icons/icon_16x16.png",
+        "default_icon": "icon_16x16.png",
         "default_popup": "popup.html"
     },
     "background": {
@@ -20,9 +21,9 @@
     },
     "permissions": ["tabs"], 
     "icons": {
-        "128" : "../icons/icon_16x16.png",
-        "128" : "../icons/icon_32x32.png",
-        "128" : "../icons/icon_48x48.png",
-        "128" : "../icons/icon_128x128.png"
+        "128" : "icon_16x16.png",
+        "128" : "icon_32x32.png",
+        "128" : "icon_48x48.png",
+        "128" : "icon_128x128.png"
     }
   }

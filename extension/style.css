@@ -1,0 +1,42 @@
+/******************************************
+                GENERAL
+******************************************/
+.row-spacer{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+body {
+
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  /*font-size: 100%;*/
+  color: rgba(0,0,0,0.9);
+  border: 3px solid;
+  border-radius: 5px;
+  height: 300px;
+  width: 400px;
+  background-color: #FFFFFF;
+  border-color: #943D93;
+}
+
+/******************************************
+                POP WINDOW
+******************************************/
+.blue {
+  color: rgb(0,147,190);
+}
+.red {
+  color: rgb(212,65,114);
+}
+.orange {
+    color: rgb(255, 99, 71);
+}
+
+/******************************************
+              THUMBS
+******************************************/
+.highlight-selection:hover{
+  background-color: rgba(0,0,0,0.1);
+
+}

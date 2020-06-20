@@ -7,7 +7,9 @@
         {
             "matches": ["<all_urls>"],
             "js": ["javascript/content.js", "javascript/popup.js"],
-            "css": ["style.css"]
+            "css": ["style.css"], 
+
+            "run_at": "document_end"
         }
     ],
     "browser_action": {
@@ -21,9 +23,9 @@
     },
     "permissions": ["tabs"],
     "icons": {
-        "128" : "icon_16x16.png",
-        "128" : "icon_32x32.png",
-        "128" : "icon_48x48.png",
+        "16" : "icon_16x16.png",
+        "32" : "icon_32x32.png",
+        "48" : "icon_48x48.png",
         "128" : "icon_128x128.png"
     }
   }

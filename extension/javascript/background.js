@@ -1,16 +1,12 @@
-chrome.browserAction.onClicked.addListener(function(tab){
-    chrome.tabs.create({url: 'popup.html'})
-})
-
-chrome.extension.onRequest.addListener(
+chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
     console.log(sendResponse);    
   });
 
 // Now inject a script onto the page
 chrome.tabs.executeScript(tab.id, {
-   code: "chrome.extension.sendRequest({content: document.body.innerHTML}, function(response) { console.log('success'); });"
- }, function() { console.log('done'); });
+    code: "chrome.extension.sendRequest({content: document.body.innerHTML}, function(response) { console.log('success'); });"
+  }, function() { console.log('done'); });
 
 
 // Checking page title

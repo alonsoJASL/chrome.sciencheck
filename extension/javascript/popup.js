@@ -128,7 +128,7 @@ const addCenterTextAfterDraw = chart => {
 		chart.ctx.textBaseline = 'middle';
 		const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
 		const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
-		const lowerY = (chart.chartArea.top + chart.chartArea.bottom) / 2 + 65;
+		const lowerY = (chart.chartArea.top + chart.chartArea.bottom) / 2 + 35;
 		const centerConfig = chart.config.options.elements.center;
 		chart.ctx.font = chart.center.font;
 		chart.ctx.fillStyle = chart.center.fillStyle;
@@ -169,14 +169,24 @@ const roundCornersAfterDraw = chart => {
 };
 
 var datasets = [{
-  "data": [45, 33],
-  "backgroundColor": [ "#e0e0e0", "#e0e0e0" ]
-}];
-var mydatasets = [{
-    "score": 84,
-    "numVerified": 40, 
+    "data": [45, 33],
+    "_score": 45, 
+    get "score"() {
+      return this["_score"];
+    },
+    set "score"(value) {
+      this["_score"] = value;
+    },
+    "_reviewers": 33,
+    get "reviewers"() {
+        return this["_reviewers"];
+    },
+    set "reviewers"(value) {
+        this["_reviewers"] = value;
+    },
     "backgroundColor": [ "#e0e0e0", "#e0e0e0" ]
-  }];
+}];
+
 var chartData = {
   type: 'doughnut',
   data: { datasets: datasets },

@@ -24,22 +24,22 @@
           </div>
           <hr style="border-top: dotted 1px;" />
           <div class="btn-group" style="width:100%">
-            <button style="width:100%" onclick="link2webpage()">Sign-in (ORCID ID)</button>
+            <button style="width:100%" id="clickme-signin">
+              Sign-in (ORCID ID)
+            </button>
           </div>
         <hr style="border-top: dotted 1px;" />
         <div class="btn-group" style="width:100%">
-          <button style="width:33.3%">Request score</button>
-          <button style="width:33.3%">Learn more</button>
+          <button style="width:33.3%" id="clickme-request">
+            Request score
+          </button>
+          <button style="width:33.3%" id="clickme-about">
+            Learn more
+          </button>
           <button style="width:33.3%">Contact</button>
         </div>
 
         <script src="javascript/content.js"></script>
         <script src="javascript/popup.js"></script>
-
-        <script>
-        function link2webpage() {
-          location.replace("https://constances96.wixsite.com/mysite/about")
-        }
-        </script>
     </body>
 </html>

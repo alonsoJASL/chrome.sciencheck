@@ -259,3 +259,18 @@ var chart = new Chart(ctx, {
     })
   }]
 });
+
+
+const webpageRoot = "https://constances96.wixsite.com/mysite";
+document.getElementById('clickme-signin').addEventListener('click', function(){
+    console.log("[Clicked button] Sign-In");
+    chrome.tabs.create({url: 'https://constances96.wixsite.com/mysite/rate'});
+});
+document.getElementById('clickme-request').addEventListener('click', function(){
+    console.log("[Clicked button] Request Score");
+    chrome.tabs.create({url: 'https://constances96.wixsite.com/mysite'}); // change later 
+});
+document.getElementById('clickme-about').addEventListener('click', function(){
+    console.log("[Clicked button] About");
+    chrome.tabs.create({url: 'https://constances96.wixsite.com/mysite/about'});
+});

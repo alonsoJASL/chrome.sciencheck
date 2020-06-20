@@ -12,12 +12,34 @@ body {
   font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
   /*font-size: 100%;*/
   color: rgba(0,0,0,0.9);
-  border: 3px solid;
+  border: 3px;
   border-radius: 5px;
-  height: 300px;
-  width: 400px;
+  height: 550px;
+  width: 300px;
   background-color: #FFFFFF;
   border-color: #943D93;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+button{
+  
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  height: 50px;
+  width: 295px;
+  border: 0em;
+  background-color: #FFFFFF;
+
+}
+
+h1{
+  font-size: xx-large;
+}
+
+h2{
+  font-size: small;
 }
 
 /******************************************
@@ -38,5 +60,4 @@ body {
 ******************************************/
 .highlight-selection:hover{
   background-color: rgba(0,0,0,0.1);
-
 }

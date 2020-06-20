@@ -1,13 +1,30 @@
-// alert('Grrrr.');
-// chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
-//     const re = new RegExp('bear','gi')
-//     const matches = document.innerHTML.match(re))
-//     sendResponse({count:matches.length})
-// })
+var domainName = "";
 
-const re = new RegExp('bear','gi')
-const matches = document.innerHTML.match(re))
-chrome.runtime.sendMessage({
-    url: window.location.href,
-    count: matches.length
-})
+
+var getWebsiteURL = function(){
+	console.log("get web URL");
+	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+	    var url = tabs[0].url;
+	    console.log("the URL is: " + url);
+
+	    //parse URL here
+	    // REGEX TO FIND DOMAIN NAME
+	    var domain = url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[1];
+	    // console.log(domain);
+	    domainName = domain;
+			console.log("the parsed URL is: " + domain);
+			
+			document.getElementById("findTheDomain").innerHTML = domainName;
+
+	    // $("#findTheDomain").html(domainName);
+	    getData();
+
+	});
+}
+
+var init = function(){
+	getWebsiteURL();
+	// getData();
+};
+
+init();

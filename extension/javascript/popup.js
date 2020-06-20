@@ -169,8 +169,8 @@ const roundCornersAfterDraw = chart => {
 };
 
 var datasets = [{
-    "data": [45, 33],
-    "_score": 45, 
+    "data": [45, 133],
+    "_score": 45,
     get "score"() {
       return this["_score"];
     },
@@ -214,7 +214,7 @@ var chartData = {
         text: ` Reviewed by ${datasets[0].data[1]} scientists.`,
         fontColor: "#a6a6a6",
         minFontSize: 10,
-        maxFontSize: 18
+        maxFontSize: 15
       }
     },
     animation: {
@@ -268,7 +268,6 @@ document.getElementById('clickme-signin').addEventListener('click', function(){
 });
 document.getElementById('clickme-request').addEventListener('click', function(){
     console.log("[Clicked button] Request Score");
-    chrome.tabs.create({url: 'https://constances96.wixsite.com/mysite'}); // change later 
 });
 document.getElementById('clickme-about').addEventListener('click', function(){
     console.log("[Clicked button] About");

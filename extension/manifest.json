@@ -1,13 +1,13 @@
 {
-    "name": "ScienCheck",
-    "version": "0.3",
+    "name": "authentiSci",
+    "version": "0.4",
     "manifest_version": 2,
-    "description": "Verifies news notes based on scientific accuracy.",
+    "description": "Articles directly verified for the validity of science-related media articles.",
     "content_scripts":[
         {
             "matches": ["<all_urls>"],
             "js": ["javascript/content.js", "javascript/popup.js"],
-            "css": ["style.css"], 
+            "css": ["style.css"],
 
             "run_at": "document_end"
         }

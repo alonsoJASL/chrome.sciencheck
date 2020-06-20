@@ -18,6 +18,7 @@ button{
 
 h1{
   font-size: large;
+
 }
 
 h2{
@@ -53,8 +54,8 @@ h2{
   margin-left: 1em;
 }
 
-/* 
-Collapsible buttons 
+/*
+Collapsible buttons
 */
 
 .collapsible {
@@ -64,11 +65,11 @@ Collapsible buttons
   padding: 18px;
   width: 100%;
   border: none;
-  text-align: left;
+  text-align: center;
   outline: none;
   font-size: 15px;
 }
-  
+
 .active, .collapsible:hover {
   background-color: #943D93;
 }
@@ -80,11 +81,11 @@ Collapsible buttons
   float: right;
   margin-left: 5px;
 }
-  
+
 .active:after {
   content: "\2212";
 }
-  
+
 .content {
   padding: 0 18px;
   max-height: 0;
@@ -93,9 +94,9 @@ Collapsible buttons
   background-color: #f1f1f1;
 }
 /* END COLLAPSE OVERVIEW HTML */
-  
+
 /* START BUTTON GROUP */
-.btn-group button {
+.authSci-btn-group button {
   background-color: #802F7C;
   border: 1px solid; /* Green border */
   color: white; /* White text */
@@ -103,20 +104,20 @@ Collapsible buttons
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
 }
-  
+
 /* Clear floats (clearfix hack) */
-.btn-group:after {
+.authSci-btn-group:after {
   content: "";
   clear: both;
   display: table;
 }
-  
-.btn-group button:not(:last-child) {
+
+.authSci-btn-group button:not(:last-child) {
   border-right: none; /* Prevent double borders */
 }
-  
+
 /* Add a background color on hover */
-.btn-group button:hover {
+.authSci-btn-group button:hover {
   background-color: #943D93;
 }
 

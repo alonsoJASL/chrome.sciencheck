@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body class="popup-body">
-        
+
         <h1><span id="findTheTitle"></span></h1>
         <h2>
           <span id="findTheAuthor"></span><span id="findTheDomain"></span>
@@ -22,18 +22,24 @@
           <div class="content">
             <p>Here would be the categories with # of scientists verifying.</p>
           </div>
-        <hr style="border-top: dotted 1px;" />
-        <button class="collapsible">Sign-in (ORCID ID)</button>
-          <div class="content">
-            <p>Sign-in & Password</p>
+          <hr style="border-top: dotted 1px;" />
+          <div class="btn-group" style="width:100%">
+            <button style="width:100%" onclick="link2webpage()">Sign-in (ORCID ID)</button>
           </div>
         <hr style="border-top: dotted 1px;" />
         <div class="btn-group" style="width:100%">
-          <button style="width:50%">Request score</button>
-          <button style="width:50%">Contact</button>
+          <button style="width:33.3%">Request score</button>
+          <button style="width:33.3%">Learn more</button>
+          <button style="width:33.3%">Contact</button>
         </div>
 
         <script src="javascript/content.js"></script>
         <script src="javascript/popup.js"></script>
+
+        <script>
+        function link2webpage() {
+          location.replace("https://constances96.wixsite.com/mysite/about")
+        }
+        </script>
     </body>
 </html>

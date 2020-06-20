@@ -5,20 +5,33 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body class="popup-body">
         <!-- <button type="button" name="count">Count Button</button> -->
         <!-- <script src="javascript/popup.js"></script> -->
         <h1>Article title</h1>
         <h2><span id="findTheDomain"></span></h2>
         <hr style="border-top: dotted 1px;" />
-        
+
         <hr style="border-top: dotted 1px;" />
-        <button class="col-xs-1 highlight-selection">Overview</button>
+        <button class="collapsible highlight-selection">Score Overview</button>
+          <div class="content">
+            <p>Here would be the categories with # of scientists verifying.</p>
+          </div>
+        <!-- <button class="col-xs-1 highlight-selection">Overview</button> -->
         <hr style="border-top: dotted 1px;" />
-        <button class="col-xs-1 highlight-selection">Flag</button>
+        <button class="collapsible highlight-selection">Sign-in (ORCID ID)</button>
+          <div class="content">
+            <p>Sign-in & Password</p>
+          </div>
+        <!-- <button class="col-xs-1 highlight-selection">Flag</button> -->
         <hr style="border-top: dotted 1px;" />
-        <button class="col-xs-1 highlight-selection">Sign-in</button>
+        <div class="btn-group" style="width:100%">
+          <button style="width:50%">Flag</button>
+          <button style="width:50%">Contact</button>
+        </div>
+        <!-- <button class="col-xs-1 highlight-selection">Sign-in</button> -->
 
         <script src="javascript/content.js"></script>
+        <script src="javascript/popup.js"></script>
     </body>
 </html>

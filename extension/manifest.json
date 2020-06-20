@@ -1,6 +1,6 @@
 {
     "name": "ScienCheck",
-    "version": "0.1",
+    "version": "0.2",
     "manifest_version": 2,
     "description": "Verifies news notes based on scientific accuracy.",
     "content_scripts":[
@@ -19,7 +19,7 @@
       "persistent": false,
       "scripts": ["javascript/background.js"]
     },
-    "permissions": ["tabs"], 
+    "permissions": ["tabs"],
     "icons": {
         "128" : "icon_16x16.png",
         "128" : "icon_32x32.png",

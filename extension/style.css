@@ -17,7 +17,7 @@ button{
 }
 
 h1{
-  font-size: xx-large;
+  font-size: large;
 }
 
 h2{
@@ -43,7 +43,7 @@ h2{
   color: rgba(0,0,0,0.9);
   border: 3px;
   border-radius: 5px;
-  height: 550px;
+  /* height: 550px; */
   width: 300px;
   background-color: #FFFFFF;
   border-color: #943D93;

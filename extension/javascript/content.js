@@ -19,7 +19,7 @@ var setCollapsibleEntries = function() {
 	}
 }
 
-var getWebsiteURL = function(){
+var getWebsiteInformation = function(){
 	console.log("[getWebsiteURL]");
 	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 	    var url = tabs[0].url;
@@ -28,20 +28,42 @@ var getWebsiteURL = function(){
 	    //parse URL here
 	    // REGEX TO FIND DOMAIN NAME
 	    var domain = url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[1];
-	    // console.log(domain);
-	    domainName = domain;
-			console.log("the parsed URL is: " + domain);
+			var pageheadings = tabs[0].title.split("-", 2);
+			var pagetitle = pageheadings[0];
+			// var pageauthor = ""; 
+			// if (pageheadings.length > 1){
+			// 	pageauthor = pageheadings[1].concat(" :");
+			// }
+			domainName = domain;
 			
+			console.log("the parsed URL is: " + domain);
+			console.log("the TITLE is: " + pagetitle);
+		
+			document.getElementById("findTheTitle").innerHTML = pagetitle;
+			// document.getElementById("findTheAuthor").innerHTML = pageheadings;
 			document.getElementById("findTheDomain").innerHTML = domainName;
 
-	    // $("#findTheDomain").html(domainName);
 	    // getData();
 
 	});
 }
 
+var getWebsiteTitle = function(){
+	console.log("[getWebsiteTitle]");
+	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+		var pagetitle = tabs[0].title;
+		console.log("the TITLE is: " + pagetitle);
+		
+		document.getElementById("findTheTitle").innerHTML = pagetitle;
+
+		// $("#findTheDomain").html(domainName);
+		// getData();
+
+});
+}
+
 var init = function(){
-	getWebsiteURL();
+	getWebsiteInformation();
 	setCollapsibleEntries();
 };
 

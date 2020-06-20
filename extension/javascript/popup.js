@@ -260,8 +260,6 @@ var chart = new Chart(ctx, {
   }]
 });
 
-
-const webpageRoot = "https://constances96.wixsite.com/mysite";
 document.getElementById('clickme-signin').addEventListener('click', function(){
     console.log("[Clicked button] Sign-In");
     chrome.tabs.create({url: 'https://orcid.org/oauth/authorize?client_id=APP-NPKDH3DEAO6YUP22&response_type=code&scope=/authenticate&redirect_uri=https://www.authentisci.com/rating'});
@@ -272,4 +270,8 @@ document.getElementById('clickme-request').addEventListener('click', function(){
 document.getElementById('clickme-about').addEventListener('click', function(){
     console.log("[Clicked button] About");
     chrome.tabs.create({url: 'https://www.authentisci.com/about'});
+});
+document.getElementById('clickme-contact').addEventListener('click', function(){
+  console.log("[Clicked button] Contact");
+  chrome.tabs.create({url: 'https://www.authentisci.com/contact'});
 });

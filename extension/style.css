@@ -17,12 +17,16 @@ button{
 }
 
 h1{
-  font-size: large;
-
+  font-size: larger;
 }
 
 h2{
   font-size: small;
+}
+
+h3{
+  font-size: large;
+  padding-left: 20px;
 }
 
 /******************************************

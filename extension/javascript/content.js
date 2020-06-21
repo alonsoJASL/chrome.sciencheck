@@ -31,15 +31,15 @@ var getWebsiteInformation = function(){
 	    var domain = url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[1];
 			var pageheadings = tabs[0].title.split("-", 2);
 			var pagetitle = pageheadings[0];
-			// var pageauthor = ""; 
+			// var pageauthor = "";
 			// if (pageheadings.length > 1){
 			// 	pageauthor = pageheadings[1].concat(" :");
 			// }
 			domainName = domain;
-			
+
 			console.log("the parsed URL is: " + domain);
 			console.log("the TITLE is: " + pagetitle);
-		
+
 			document.getElementById("findTheTitle").innerHTML = pagetitle;
 			// document.getElementById("findTheAuthor").innerHTML = pageheadings;
 			document.getElementById("findTheDomain").innerHTML = domainName;
@@ -54,7 +54,7 @@ var getWebsiteTitle = function(){
 	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 		var pagetitle = tabs[0].title;
 		console.log("the TITLE is: " + pagetitle);
-		
+
 		document.getElementById("findTheTitle").innerHTML = pagetitle;
 
 		// $("#findTheDomain").html(domainName);
@@ -70,9 +70,9 @@ var getScores = function(){
 	var clarityScore = 8.8;
 	var avgScore = (sourceScore + biasScore + clarityScore) / .3;
 
-	document.getElementById("score-sources").innerHTML = sourceScore.toString().concat(" / 10");
-	document.getElementById("score-bias").innerHTML = biasScore.toString().concat(" / 10");;
-	document.getElementById("score-clarity").innerHTML = clarityScore.toString().concat(" / 10");;
+	document.getElementById("score-sources").innerHTML = sourceScore.toString().concat("/10");
+	document.getElementById("score-bias").innerHTML = biasScore.toString().concat("/10");;
+	document.getElementById("score-clarity").innerHTML = clarityScore.toString().concat("/10");;
 
 	console.log(`The average score is: ${avgScore}`);
 	globalAvgScore = avgScore;

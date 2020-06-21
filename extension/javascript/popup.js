@@ -168,25 +168,28 @@ const roundCornersAfterDraw = chart => {
 	}
 };
 
+var avgScore = 64;
+var numReviwers = 9;
+
+
+chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
+  chrome.tabs.sendMessage(tabs[0].id, 'send_scores', setScores)
+})
+  
+function setScores(res){
+  avgScore = res.avgscore;
+  numReviewers = res.numreviewers;
+}
+
+
+
+avgScore=34; // process to load json 
+
 var datasets = [{
-    "data": [45, 133],
-    "_score": 45,
-    get "score"() {
-      return this["_score"];
-    },
-    set "score"(value) {
-      this["_score"] = value;
-    },
-    "_reviewers": 33,
-    get "reviewers"() {
-        return this["_reviewers"];
-    },
-    set "reviewers"(value) {
-        this["_reviewers"] = value;
-    },
+    "data": [avgScore, numReviwers],
     "backgroundColor": [ "#e0e0e0", "#e0e0e0" ]
 }];
-
+  
 var chartData = {
   type: 'doughnut',
   data: { datasets: datasets },
@@ -260,8 +263,13 @@ var chart = new Chart(ctx, {
   }]
 });
 
+//
+chrome.tabs.query({currentWindow: true, active: true}, 
+  function (tabs){
+    chrome.tabs.sendMessage(tabs[0].id, 'hi')
+  })
 
-const webpageRoot = "https://constances96.wixsite.com/mysite";
+// links to our website
 document.getElementById('clickme-signin').addEventListener('click', function(){
     console.log("[Clicked button] Sign-In");
     chrome.tabs.create({url: 'https://orcid.org/oauth/authorize?client_id=APP-NPKDH3DEAO6YUP22&response_type=code&scope=/authenticate&redirect_uri=https://www.authentisci.com/rating'});
@@ -273,3 +281,8 @@ document.getElementById('clickme-about').addEventListener('click', function(){
     console.log("[Clicked button] About");
     chrome.tabs.create({url: 'https://www.authentisci.com/about'});
 });
+document.getElementById('clickme-contact').addEventListener('click', function(){
+  console.log("[Clicked button] Contact");
+  chrome.tabs.create({url: 'https://www.authentisci.com/contact'});
+});
+

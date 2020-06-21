@@ -1,5 +1,7 @@
 var domainName = "";
 var globalAvgScore = 0;
+var globalNumReviewers = 0;
+
 
 var setCollapsibleEntries = function() {
 	console.log("[setCollapsibleEntries]");
@@ -29,7 +31,7 @@ var getWebsiteInformation = function(){
 	    //parse URL here
 	    // REGEX TO FIND DOMAIN NAME
 	    var domain = url.match(/^[\w-]+:\/{2,}\[?([\w\.:-]+)\]?(?::[0-9]*)?/)[1];
-			var pageheadings = tabs[0].title.split("-", 2);
+			var pageheadings = tabs[0].title.split(" - ", 2);
 			var pagetitle = pageheadings[0];
 			// var pageauthor = "";
 			// if (pageheadings.length > 1){
@@ -71,17 +73,36 @@ var getScores = function(){
 	var avgScore = (sourceScore + biasScore + clarityScore) / .3;
 
 	document.getElementById("score-sources").innerHTML = sourceScore.toString().concat("/10");
-	document.getElementById("score-bias").innerHTML = biasScore.toString().concat("/10");;
-	document.getElementById("score-clarity").innerHTML = clarityScore.toString().concat("/10");;
+	document.getElementById("score-bias").innerHTML = biasScore.toString().concat("/10");
+	document.getElementById("score-clarity").innerHTML = clarityScore.toString().concat("/10");
 
-	console.log(`The average score is: ${avgScore}`);
 	globalAvgScore = avgScore;
+	globalNumReviewers = 12;
+	
 }
 
 var init = function(){
 	getWebsiteInformation();
 	setCollapsibleEntries();
 	getScores();
+
+	console.log(`The average score is: ${globalAvgScore}`);
+	chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
+		sendResponse({avgscore: globalAvgScore, numreviewers: globalNumReviewers})
+	})
 };
+
+
+
+
+chrome.browserAction.onClicked.addListener(function() { 
+	alert("This extension is still in it's development phase.\n"
+ + "Scores do not represent the content of the website.\n "
+ + "find out more at https://www.authentisci.com/"); 
+});
+
+chrome.runtime.onMessage.addListener(function (request){
+	alert(request);
+})
 
 init();

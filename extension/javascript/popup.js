@@ -168,25 +168,13 @@ const roundCornersAfterDraw = chart => {
 	}
 };
 
-var avgScore = 64;
-var numReviwers = 9;
-
-
-chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
-  chrome.tabs.sendMessage(tabs[0].id, 'send_scores', setScores)
-})
-  
-function setScores(res){
-  avgScore = res.avgscore;
-  numReviewers = res.numreviewers;
-}
-
-
-
-avgScore=34; // process to load json 
+var avgScore = 70;
+var toTotal = 100-avgScore;
+var numReviewers = 3;
 
 var datasets = [{
-    "data": [avgScore, numReviwers],
+    "data": [avgScore, toTotal],
+    "reviewers": [numReviewers], 
     "backgroundColor": [ "#e0e0e0", "#e0e0e0" ]
 }];
   
@@ -214,7 +202,7 @@ var chartData = {
         maxFontSize: 60
       },
       centerSub: {
-        text: ` Reviewed by ${datasets[0].data[1]} scientists.`,
+        text: ` Reviewed by ${datasets[0].reviewers[0]} scientists.`,
         fontColor: "#a6a6a6",
         minFontSize: 10,
         maxFontSize: 15
@@ -262,12 +250,6 @@ var chart = new Chart(ctx, {
     })
   }]
 });
-
-//
-chrome.tabs.query({currentWindow: true, active: true}, 
-  function (tabs){
-    chrome.tabs.sendMessage(tabs[0].id, 'hi')
-  })
 
 // links to our website
 document.getElementById('clickme-signin').addEventListener('click', function(){

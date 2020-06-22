@@ -67,9 +67,9 @@ var getWebsiteTitle = function(){
 
 var getScores = function(){
 	console.log("[Getting Sources Score]");
-	var sourceScore = 5;
-	var biasScore = 9;
-	var clarityScore = 8.8;
+	var sourceScore = 8;
+	var biasScore = 4;
+	var clarityScore = 9;
 	var avgScore = (sourceScore + biasScore + clarityScore) / .3;
 
 	document.getElementById("score-sources").innerHTML = sourceScore.toString().concat("/10");
@@ -87,22 +87,6 @@ var init = function(){
 	getScores();
 
 	console.log(`The average score is: ${globalAvgScore}`);
-	chrome.runtime.onMessage.addListener(function (request, sender, sendResponse){
-		sendResponse({avgscore: globalAvgScore, numreviewers: globalNumReviewers})
-	})
 };
-
-
-
-
-chrome.browserAction.onClicked.addListener(function() { 
-	alert("This extension is still in it's development phase.\n"
- + "Scores do not represent the content of the website.\n "
- + "find out more at https://www.authentisci.com/"); 
-});
-
-chrome.runtime.onMessage.addListener(function (request){
-	alert(request);
-})
 
 init();

@@ -168,16 +168,16 @@ const roundCornersAfterDraw = chart => {
 	}
 };
 
-var avgScore = 70;
-var toTotal = 100-avgScore;
+var avgScore = 7.5;
+var toTotal = 10-avgScore;
 var numReviewers = 3;
 
 var datasets = [{
     "data": [avgScore, toTotal],
-    "reviewers": [numReviewers], 
+    "reviewers": [numReviewers],
     "backgroundColor": [ "#e0e0e0", "#e0e0e0" ]
 }];
-  
+
 var chartData = {
   type: 'doughnut',
   data: { datasets: datasets },
@@ -194,15 +194,15 @@ var chartData = {
       },
       center: {
         maxText: "100%",
-        text: `${datasets[0].data[0]}`,
+        text: `${datasets[0].data[0]}/10`,
         fontColor: "#646464",
         fontFamily: "Roboto",
         fontStyle: "normal",
         minFontSize: 20,
-        maxFontSize: 60
+        maxFontSize: 50
       },
       centerSub: {
-        text: ` Reviewed by ${datasets[0].reviewers[0]} scientists.`,
+        text: ` Reviewed by ${datasets[0].reviewers[0]} scientists`,
         fontColor: "#a6a6a6",
         minFontSize: 10,
         maxFontSize: 15
@@ -267,4 +267,3 @@ document.getElementById('clickme-contact').addEventListener('click', function(){
   console.log("[Clicked button] Contact");
   chrome.tabs.create({url: 'https://www.authentisci.com/contact'});
 });
-
